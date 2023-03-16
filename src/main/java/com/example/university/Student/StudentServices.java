@@ -26,18 +26,18 @@ StudentDto saveStudent(StudentDto studentDto){
     return studentMapper.map(save);
 
 
-}
+     }
 List<StudentDto>allStudents(){
         return studentRepository.findAll().stream().map(studentMapper::map).toList();
-}
+     }
 List<StudentDto>findAllByLastNameIgnoreCase(String lastName){
         return studentRepository.findAllByLastNameContainingIgnoreCase(lastName)
                 .stream().map(studentMapper::map).toList();
-}
+    }
 @Transactional
 public  void  deleteByEmail(String email){
 
       studentRepository.deleteByEmailIgnoreCase(email);
-              //  .map(studentMapper::map);
-}
+
+   }
 }
