@@ -9,10 +9,10 @@ import java.util.Objects;
 
 @Entity
 public class Course {
-
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Id
+
     @Column(unique = true)
     private String course;
 

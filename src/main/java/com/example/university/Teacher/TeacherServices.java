@@ -2,6 +2,7 @@ package com.example.university.Teacher;
 
 import com.example.university.Exception.EmailException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -30,6 +31,7 @@ public class TeacherServices {
       return   teacherRepository.findAllByLastNameContainingIgnoreCase(lastName)
                 .stream().map(teacherMapper::map).toList();
     }
+    @Transactional
     public void  deleteByEmail(String email){
         teacherRepository.deleteByEmailIgnoreCase(email);
     }

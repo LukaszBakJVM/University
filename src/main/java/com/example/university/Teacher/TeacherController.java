@@ -16,7 +16,7 @@ public class TeacherController {
         this.teacherServices = teacherServices;
     }
 
-    @PutMapping
+    @PostMapping
     ResponseEntity<TeacherDto> saveTeacher(@RequestBody TeacherDto dto) {
         TeacherDto teacherDto = teacherServices.saveTeacher(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -24,14 +24,14 @@ public class TeacherController {
         return ResponseEntity.created(uri).body(teacherDto);
     }
 
-    @GetMapping
+    @GetMapping()
     ResponseEntity<List<TeacherDto>> allTeachers(@RequestParam(required = false) String lastName) {
         if (lastName == null) {
             return ResponseEntity.ok(teacherServices.findAll());
         }
         return ResponseEntity.ok(teacherServices.findAllByLastNameIgnoreCase(lastName));
     }
-
+@DeleteMapping("/{email}")
     ResponseEntity<?> deleteByEmail(@PathVariable String email) {
         teacherServices.deleteByEmail(email);
         return ResponseEntity.noContent().build();
