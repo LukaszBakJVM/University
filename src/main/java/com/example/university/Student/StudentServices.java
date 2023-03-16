@@ -1,11 +1,10 @@
 package com.example.university.Student;
 
-import com.example.university.Exception.StudentEmailException;
+import com.example.university.Exception.EmailException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Service
@@ -19,7 +18,7 @@ public class StudentServices {
     }
 StudentDto saveStudent(StudentDto studentDto){
     studentRepository.findByEmail(studentDto.getEmail())
-        .ifPresent(t->{throw new StudentEmailException();
+        .ifPresent(t->{throw new EmailException();
         });
 
     Student mapped = studentMapper.map(studentDto);
