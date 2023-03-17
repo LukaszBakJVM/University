@@ -236,3 +236,8 @@ insert into course (Course) values ('animacja');
 insert into course (Course) values ('projekty');
 insert into course (Course) values ('polityka');
 insert into course (Course) values ('marketing');
+
+
+
+-------------TeacherSubject
+--insert into

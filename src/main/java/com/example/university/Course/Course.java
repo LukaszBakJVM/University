@@ -15,6 +15,8 @@ public class Course {
 
     @Column(unique = true)
     private String course;
+    @OneToMany
+    private List<Student>studentList=new ArrayList<>();
 
 
     public Course() {

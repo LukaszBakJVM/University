@@ -1,6 +1,7 @@
 package com.example.university.Subject;
 
 import com.example.university.Course.Course;
+import com.example.university.Teacher.Teacher;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -13,9 +14,9 @@ public class Subject {
    private long id;
     @Column (unique = true)
     private String subject;
-  //  @ManyToMany
- //   @JoinColumn(name = "Kierunek",referencedColumnName = "course")
-   // private List<Course>courses=new ArrayList<>();
+    @ManyToMany
+
+    private List<Teacher>teacherList=new ArrayList<>();
 
 
 

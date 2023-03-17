@@ -1,8 +1,12 @@
 package com.example.university.Teacher;
 
+import com.example.university.Course.Course;
+import com.example.university.Subject.Subject;
 import jakarta.persistence.*;
 import org.springframework.lang.NonNull;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -18,6 +22,9 @@ public class Teacher {
     @Column(unique = true)
     @NonNull
     private String email;
+    @ManyToMany
+    private List<Subject>subjectList=new ArrayList<>();
+
 
 
 
@@ -63,6 +70,8 @@ public class Teacher {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
 
     @Override
     public boolean equals(Object o) {

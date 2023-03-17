@@ -1,7 +1,11 @@
 package com.example.university.Student;
 
+import com.example.university.Course.Course;
 import jakarta.persistence.*;
 import org.springframework.lang.NonNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Student {
@@ -18,6 +22,9 @@ public class Student {
     @Column(unique = true)
     @NonNull
     private String email;
+    @ManyToOne
+    private Course course;
+
 
 
 

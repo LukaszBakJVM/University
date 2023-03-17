@@ -23,7 +23,13 @@ public class StudentController {
         return ResponseEntity.created(uri).body(studentDto);
 
     }
-    @GetMapping
+    @PutMapping("/{id}")
+    ResponseEntity<?>update(@PathVariable long id ,@RequestBody StudentDto dto) {
+        return studentServices.update(id,dto).map(u->ResponseEntity.noContent().build())
+                .orElse(ResponseEntity.notFound().build());
+
+    }
+        @GetMapping
     ResponseEntity<List<StudentDto>>allStudents(@RequestParam(required = false) String lastName){
         if (lastName==null){
           return   ResponseEntity.ok(studentServices.allStudents());

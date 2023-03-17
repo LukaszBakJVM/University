@@ -23,6 +23,12 @@ public class TeacherController {
                 .path("/{id}").buildAndExpand(teacherDto.getId()).toUri();
         return ResponseEntity.created(uri).body(teacherDto);
     }
+    @PutMapping("/{id}")
+    ResponseEntity<?>update(@PathVariable long id,@RequestBody TeacherDto dto){
+        return teacherServices.update(id,dto).map(u->ResponseEntity.noContent().build())
+                .orElse(ResponseEntity.notFound().build());
+
+    }
 
     @GetMapping()
     ResponseEntity<List<TeacherDto>> allTeachers(@RequestParam(required = false) String lastName) {

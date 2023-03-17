@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TeacherServices {
@@ -22,6 +23,16 @@ public class TeacherServices {
         Teacher maped = teacherMapper.map(teacherDto);
         Teacher save = teacherRepository.save(maped);
         return teacherMapper.map(save);
+    }
+    Optional<TeacherDto>update(long id,TeacherDto dto){
+      if (!teacherRepository.existsById(id)){
+          return Optional.empty();
+      }
+      dto.setId(id);
+        Teacher mapped = teacherMapper.map(dto);
+        Teacher save = teacherRepository.save(mapped);
+        return Optional.of(teacherMapper.map(save));
+
     }
 
     List<TeacherDto>findAll(){
