@@ -71,7 +71,13 @@ public class Teacher {
         this.email = email;
     }
 
+    public List<Subject> getSubjectList() {
+        return subjectList;
+    }
 
+    public void setSubjectList(List<Subject> subjectList) {
+        this.subjectList = subjectList;
+    }
 
     @Override
     public boolean equals(Object o) {

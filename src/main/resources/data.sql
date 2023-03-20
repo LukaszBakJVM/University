@@ -240,4 +240,5 @@ insert into course (Course) values ('marketing');
 
 
 -------------TeacherSubject
---insert into
+insert into przedmioty(teacher_id,subject_id) values (1,1);
+

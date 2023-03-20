@@ -31,5 +31,11 @@ public class CourseController {
         return ResponseEntity.ok(courseServices.findAll());
 
     }
+    @DeleteMapping("/{name}")
+    ResponseEntity<?>delete(@PathVariable String name){
+        courseServices.deleteByCourse(name);
+        return ResponseEntity.noContent().build();
+
+    }
 
 }

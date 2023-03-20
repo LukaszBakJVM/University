@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CourseServices {
@@ -24,8 +25,8 @@ public class CourseServices {
         return courseMapper.map(save);
     }
 List<CourseDto>findAll(){
-        return courseRepository.findAll().stream()
-                .map(courseMapper::map).toList();
+        return courseRepository.findAllByOrderByIdAsc().stream()
+                .map(courseMapper::map).collect(Collectors.toList());
 }
 @Transactional
     public void deleteByCourse(String name){
