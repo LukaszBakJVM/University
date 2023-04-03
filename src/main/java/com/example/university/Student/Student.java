@@ -22,7 +22,7 @@ public class Student {
     @Column(unique = true)
     @NonNull
     private String email;
-    @ManyToOne
+    @ManyToOne()
     private Course course;
 
 

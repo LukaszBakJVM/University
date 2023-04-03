@@ -1,6 +1,5 @@
-package com.example.university.University;
+package com.example.university.University.TeacherSubject;
 
-import com.example.university.Teacher.Teacher;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

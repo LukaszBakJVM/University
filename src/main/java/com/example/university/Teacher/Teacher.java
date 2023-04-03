@@ -22,7 +22,7 @@ public class Teacher {
     @Column(unique = true)
     @NonNull
     private String email;
-    @ManyToMany
+    @ManyToMany(mappedBy = "teacherList")
     private List<Subject>subjectList=new ArrayList<>();
 
 

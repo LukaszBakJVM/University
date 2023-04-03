@@ -15,6 +15,7 @@ public class Subject {
     @Column (unique = true)
     private String subject;
     @ManyToMany
+    @JoinColumn(name = "teacher_id")
 
     private List<Teacher>teacherList=new ArrayList<>();
 

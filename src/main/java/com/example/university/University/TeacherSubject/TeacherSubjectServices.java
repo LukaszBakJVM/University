@@ -1,9 +1,13 @@
-package com.example.university.University;
+package com.example.university.University.TeacherSubject;
 
 import com.example.university.Subject.Subject;
 import com.example.university.Subject.SubjectRepository;
 import com.example.university.Teacher.Teacher;
 import com.example.university.Teacher.TeacherRepository;
+import com.example.university.University.TeacherSubject.TeacherSubjectDto;
+import com.example.university.University.TeacherSubject.TeacherSubjectMapper;
+import com.example.university.University.TeacherSubject.TeacherSubjectRepository;
+import com.example.university.University.TeacherSubject.TeacherSubjects;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

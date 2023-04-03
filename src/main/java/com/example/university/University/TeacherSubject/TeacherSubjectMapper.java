@@ -1,4 +1,4 @@
-package com.example.university.University;
+package com.example.university.University.TeacherSubject;
 
 import com.example.university.Subject.Subject;
 import com.example.university.Subject.SubjectRepository;
@@ -27,7 +27,7 @@ public class TeacherSubjectMapper {
 
 
     }
-    TeacherSubjects map(TeacherSubjectDto dto){
+  /*  TeacherSubjects map(TeacherSubjectDto dto){
         TeacherSubjects teacherSubjects =new TeacherSubjects();
         teacherSubjects.setId(dto.getId());
         Teacher teacher = teacherRepository.findById(dto.getTeacherId()).orElseThrow();
@@ -35,5 +35,5 @@ public class TeacherSubjectMapper {
         Subject subject = subjectRepository.findById(dto.getSubjectId()).orElseThrow();
         teacherSubjects.setSubject(subject);
         return teacherSubjects;
-    }
+    }*/
 }

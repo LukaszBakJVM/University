@@ -1,4 +1,4 @@
-package com.example.university.University;
+package com.example.university.University.TeacherSubject;
 
 import com.example.university.Subject.Subject;
 import com.example.university.Teacher.Teacher;

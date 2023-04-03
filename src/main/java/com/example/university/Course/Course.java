@@ -15,7 +15,7 @@ public class Course {
 
     @Column(unique = true)
     private String course;
-    @OneToMany
+    @OneToMany(mappedBy = "course")
     private List<Student>studentList=new ArrayList<>();
 
 

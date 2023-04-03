@@ -1,4 +1,4 @@
-package com.example.university.University;
+package com.example.university.University.TeacherSubject;
 
 public class TeacherSubjectDto {
     private long id;

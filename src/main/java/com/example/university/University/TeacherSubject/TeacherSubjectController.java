@@ -1,4 +1,4 @@
-package com.example.university.University;
+package com.example.university.University.TeacherSubject;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
